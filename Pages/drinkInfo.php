@@ -1,2 +1,3 @@
-<?php include "header.php"; ?>
-<?php include "footer.php"; ?>
+<?php $pageName = "Drink Info"; 
+include "/Pages/header.php";
+?>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include "header.php"; 
     if(!empty($_POST))
     {
@@ -45,3 +46,8 @@
     <input id="loginBtn" type="submit" value="Submit">
 </form>
 <?php include "footer.php"; ?>
+=======
+<?php $pageName = "Create Account"; 
+include "../Pages/header.php";
+?>
+>>>>>>> 01918c16420021aece308f256c34effe6d278e7e
