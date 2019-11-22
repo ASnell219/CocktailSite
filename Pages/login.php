@@ -1,5 +1,6 @@
 <?php
-    include "header.php";
+    $pageName = "Login";
+    include "../Pages/header.php";
     
 
     if(!empty($_POST))
@@ -52,4 +53,4 @@
     <input id="loginBtn" type="submit" value="Submit">
 </form>
 
-<?php include "footer.php"; ?>
+<?php include "/Pages/footer.php"; ?>
