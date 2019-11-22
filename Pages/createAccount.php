@@ -12,7 +12,7 @@
             }
             else
             {
-                header('Location: createAccount.php');
+                header('Location: login.php');
             }
         }
     }

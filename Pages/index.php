@@ -4,3 +4,4 @@ include "../Pages/menu.php";
 ?>
 
 <h1> Welcome to the Cocktail Site! </h1>
+<?php include "footer.php";?>

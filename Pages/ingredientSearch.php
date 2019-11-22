@@ -1,6 +1,6 @@
 <?php $pageName = "Ingredient Search"; 
-include "../Pages/header.php";
-include "../Pages/menu.php";
+include "header.php";
+include "menu.php";
 ?>
 
 <h1>Search for Ingredients! </h1>
@@ -11,4 +11,4 @@ include "../Pages/menu.php";
 </form>
 
 
-<?php include "../Pages/footer.php"; ?>
+<?php include "footer.php"; ?>

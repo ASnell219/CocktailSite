@@ -1,3 +1,4 @@
 <?php $pageName = "Drink Info"; 
-include "/Pages/header.php";
+include "header.php";
 ?>
+<?php include "footer.php"; ?>

@@ -1,6 +1,6 @@
 <?php $pageName = "Drink Search"; 
-include "../Pages/header.php";
-include "../Pages/menu.php";
+include "header.php";
+include "menu.php";
 ?>
 
 <h1> Search for Drinks! </h1>
@@ -9,3 +9,4 @@ include "../Pages/menu.php";
 <input type="text" name="drink" id="drink" value=""><br/>
 <input type="submit" value="Search">
 </form>
+<?php "footer.php";?>

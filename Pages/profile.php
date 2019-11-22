@@ -1,7 +1,9 @@
 <?php $pageName = "Profile"; 
-include "../Pages/header.php";
-include "../Pages/menu.php";
+include "header.php";
+include "menu.php";
 ?>
 
 
 <h1>Here are your favorites </h1>
+
+<?php include "footer.php";?>
