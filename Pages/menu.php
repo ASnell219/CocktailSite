@@ -6,10 +6,10 @@ $menuArr = [
 ];
 
 $userSettings = array();
-if(isset($_SESSION['login_user'])){
-    $userSettings = array("Profile" => "../Pages/profile.php");
+if(isset($_SESSION['user'])){
+    $userSettings = array("Profile" => "../Pages/profile.php", "Logout" => "../Pages/logout.php");
 }else{
-    $userSettings = array("Login" => "../Pages/login.php");
+    $userSettings = array("Login" => "../Pages/login.php", "Create Account" => "../Pages/createAccount.php");
 }
 
 $menuArr = array_merge($menuArr, $userSettings);

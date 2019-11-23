@@ -46,5 +46,4 @@
     <input id="loginBtn" type="submit" value="Submit">
 </form>
 <?php include "footer.php"; ?>
-?>
 
