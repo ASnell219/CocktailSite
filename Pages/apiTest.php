@@ -1,6 +1,7 @@
 <?php $pageName = "Test"; 
-include "../Pages/header.php";
-include "../Pages/menu.php";
+    include "../Pages/header.php";
+    include "../Pages/menu.php";
+    $_SESSION['currentPage'] = $_SERVER['REQUEST_URI'];
 ?>
 
 <h1>Test</h1>
@@ -17,6 +18,11 @@ include "../Pages/menu.php";
             echo "<td>{$drink->strAlcoholic}</td>";
             $imgSrc ="{$drink->strDrinkThumb}";
             echo "<td><img src=$imgSrc></td>";
+            
+            if (isset($_SESSION['user'])) 
+            {
+                echo "<td><a href='favorite.php?d_id={$drink->idDrink}'>Favorite</a></td>";
+            }
             echo "</tr>";
         }
     }
