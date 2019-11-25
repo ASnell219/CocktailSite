@@ -4,7 +4,7 @@
     {
         if(isset($_POST["user"]) && isset($_POST["pass"]))
         {
-            if(!SearchForUser($_POST["user"]))
+            if(SearchForUser($_POST["user"]))
             {
                 CreateUser($_POST["user"], $_POST["pass"]);
                 //need to know if admin
@@ -43,7 +43,7 @@
     <input id="username" type="text" name="user">
     Password:
     <input id="password" type="password" name="pass">
-    <input id="loginBtn" type="submit" value="Submit">
+    <input id="createBtn" type="submit" value="Submit">
 </form>
 <?php include "footer.php"; ?>
 
