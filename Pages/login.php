@@ -25,7 +25,8 @@
 
         $query = "Select * from users where Username='".$user."'&&Password='".$pass."'";
         $result = $mysqli->query($query);
-        if($result != null){
+        $numResults = $result->num_rows;
+        if($numResults>0){
             $row = $result->fetch_assoc();
             extract($row);
             if($IsAdmin == 1){
