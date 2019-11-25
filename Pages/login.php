@@ -43,14 +43,28 @@
     }
 ?>
 
-<h1 id='loginHeader'>Login</h1>
+<div id="contentHolder" class="box flex-col">
+    <div class="box flex-row">
+        <div id="signupArea" class='box flex-col center-align'>
+            <div id="img"><img src="../styles/images/cocktails3.jpg" /></div>
+            <div id="info">
+                <div>Don't have an account?</div>
+                <div>Sign up here!</div>
+            </div>
+            <div id="signupBtn" class="btn">Sign Up</div>
+        </div>
+        <div id="loginArea" class='box flex-col'>
+            <form action='' method="post" class='box flex-col center-align'>
+                <div id="title">Sign in to "site name"</div>
+                <input class="formInput" type="text" name="user" placeholder="Username">
+                <input class="formInput" type="text" name="pass" placeholder="Password">
+                <input id="loginBtn" class="btn" type="submit" value="Sign In">
+            </form>
+        </div>
+    </div>
+    <?php include "footer.php"; ?>
+</div>
 
-<form action='' method="post">
-    Username:
-    <input id="username" type="text" name="user">
-    Password:
-    <input id="password" type="password" name="pass">
-    <input id="loginBtn" type="submit" value="Submit">
-</form>
 
-<?php include "footer.php"; ?>
+
+
