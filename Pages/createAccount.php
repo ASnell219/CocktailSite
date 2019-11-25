@@ -4,36 +4,29 @@
     {
         if(isset($_POST["user"]) && isset($_POST["pass"]))
         {
-            if(SearchForUser($_POST["user"]))
-            {
-                CreateUser($_POST["user"], $_POST["pass"]);
-                //need to know if admin
-                header('Location: index.php');
-            }
-            else
-            {
-                header('Location: login.php');
-            }
+            SearchForUser($_POST["user"], $_POST["pass"]);
         }
     }
-    function SearchForUser($user) {
+    function SearchForUser($user, $pass) {
         include "../dbconfig.php";
 
         $query = "Select * from users where Username='".$user."'";
         $result = $mysqli->query($query);
-        if($result != null){
-        
-            return true;
+        $numResults = $result->num_rows;
+        if($numResults>0){
+            header('Location: login.php');            
         }
         else{
-            return false;
+            CreateUser($user, $pass);
+                //need to know if admin
+                header('Location: index.php');
         }
     }
     function CreateUser($user, $pass) {
         include "../dbconfig.php";
 
         $query = "Insert into `users` (`Username`, `Password`, `IsAdmin`) VALUES ('".$user."','".$pass."',0)";
-        $result = $mysqli->query($query);
+        $mysqli->query($query);
     }
 ?>
 <h1 id='loginHeader'>CreateAccount</h1>
