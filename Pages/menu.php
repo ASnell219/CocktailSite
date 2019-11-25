@@ -1,8 +1,7 @@
 <?php
 $menuArr = [  
     "Home" => "../Pages/index.php",
-    "Search for Drinks" => "../Pages/drinkSearch.php",
-    "Search for Ingredients" => "../Pages/ingredientSearch.php",
+    "Search for Drinks" => "../Pages/drinkSearch.php"
 ];
 
 $userSettings = array();
