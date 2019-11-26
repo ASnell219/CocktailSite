@@ -3,9 +3,11 @@ html, body, #contentHolder {
   margin: 0;
 }
 footer {
-  padding: 20px;
+  padding: 15px;
   background-color: #FF0C85;
   color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8em;
 }
 .box {
   display: flex;

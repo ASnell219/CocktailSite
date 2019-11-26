@@ -52,7 +52,7 @@
                 <div>Don't have an account?</div>
                 <div>Sign up here!</div>
             </div>
-            <div id="signupBtn" class="btn">Sign Up</div>
+            <a id="signupBtn" class="btn" href="createAccount.php">Sign Up</a>
         </div>
         <div id="loginArea" class='box flex-col'>
             <form action='' method="post" class='box flex-col center-align'>
