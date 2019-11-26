@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 22, 2019 at 10:22 PM
+-- Generation Time: Nov 26, 2019 at 06:15 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -25,30 +25,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cocktails`
---
-
-DROP TABLE IF EXISTS `cocktails`;
-CREATE TABLE IF NOT EXISTS `cocktails` (
-  `Drink_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` text NOT NULL,
-  `Ingredients` text NOT NULL,
-  `Category` text NOT NULL,
-  `IsAlcoholic` tinyint(1) NOT NULL,
-  PRIMARY KEY (`Drink_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `favorites`
 --
 
 DROP TABLE IF EXISTS `favorites`;
 CREATE TABLE IF NOT EXISTS `favorites` (
-  `User_ID` text NOT NULL,
-  `Drink_ID` text NOT NULL
+  `User_ID` int(11) NOT NULL,
+  `Drink_ID` int(11) NOT NULL,
+  PRIMARY KEY (`User_ID`,`Drink_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `favorites`
+--
+
+INSERT INTO `favorites` (`User_ID`, `Drink_ID`) VALUES
+(2, 11007),
+(2, 11118);
 
 -- --------------------------------------------------------
 
@@ -63,7 +56,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `Password` text NOT NULL,
   `IsAdmin` tinyint(1) NOT NULL,
   PRIMARY KEY (`User_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`User_ID`, `Username`, `Password`, `IsAdmin`) VALUES
+(2, 'carl', 'Caaarrll', 0),
+(5, 'nd', 'xyz', 0),
+(6, 'aaaaa', 'asd', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
