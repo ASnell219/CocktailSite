@@ -6,7 +6,7 @@
 
 <h1>Test</h1>
 <?php
-    $url="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
+    $url="https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=m";
     $data =file_get_contents($url);
     $json = json_decode($data);
     echo '<table border=1>';
