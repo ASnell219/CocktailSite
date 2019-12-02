@@ -13,6 +13,6 @@
     }
     $query = "Delete from favorites where User_ID='".$u_id."'&& Drink_ID='".$_GET['d_id']."'";
     $mysqli->query($query);
-    header('Location: apiTest.php');
+    header('Location: profile.php');
     
 ?>

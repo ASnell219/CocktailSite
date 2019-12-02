@@ -8,7 +8,8 @@ include "menu.php";
 <?php 
 if(isset($_POST['ingredientName'])) {
     $ingredientName = $_POST['ingredientName'];
-    $url = "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?i=".$ingredientName;
+    // $url = "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?i=".$ingredientName;
+    $url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
 }else{
     $ingredientName = "";
     $url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
@@ -23,25 +24,33 @@ if(isset($_POST['ingredientName'])) {
 <?php
     $data = file_get_contents($url);
     $json = json_decode($data);
+    $ingred;
     echo '<table border=1>';
     foreach($json as $ingredients){
         foreach($ingredients as $ingredient){
-            echo "<tr>";
             if(isset($_POST['ingredientName'])){
-                echo "<td>{$ingredient->strIngredient}</td>";
-            }else{
-                echo "<td>{$ingredient->strIngredient1}</td>";
+                if(in_array($ingredientName, $ingredients)){
+                    echo "<td>{$ingredient->strIngredient1}</td>";
+                }
             }
-            //echo "<td>{$drink->strCategory}</td>";
-            //echo "<td>{$drink->strAlcoholic}</td>";
-            //$imgSrc ="{$drink->strDrinkThumb}";
-            //echo "<td><img src=$imgSrc></td>";
-            
-            // if (isset($_SESSION['user'])) 
-            // {
-            //     echo "<td><a href='favorite.php?d_id={$drink->idDrink}'>Favorite</a></td>";
-            // }
-            echo "</tr>";
+            else{
+                echo "<tr>";
+                // if(isset($_POST['ingredientName'])){
+                //     echo "<td>{$ingredient->strIngredient}</td>";
+                // }else{
+                    echo "<td>{$ingredient->strIngredient1}</td>";
+                // }
+                //echo "<td>{$drink->strCategory}</td>";
+                //echo "<td>{$drink->strAlcoholic}</td>";
+                //$imgSrc ="{$drink->strDrinkThumb}";
+                //echo "<td><img src=$imgSrc></td>";
+                
+                // if (isset($_SESSION['user'])) 
+                // {
+                //     echo "<td><a href='favorite.php?d_id={$drink->idDrink}'>Favorite</a></td>";
+                // }
+                echo "</tr>";
+            }
         }
     }
     echo "</table>";
