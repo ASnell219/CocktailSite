@@ -8,10 +8,10 @@ include "menu.php";
 <?php 
 if(isset($_POST['ingredientName'])) {
     $ingredientName = $_POST['ingredientName'];
-    $url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=".$ingredientName;
+    $url = "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?i=".$ingredientName;
 }else{
     $ingredientName = "";
-    $url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
+    $url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
 }
 ?>
 
@@ -27,7 +27,11 @@ if(isset($_POST['ingredientName'])) {
     foreach($json as $ingredients){
         foreach($ingredients as $ingredient){
             echo "<tr>";
-            echo "<td>{$ingredient->strIngredient}</td>";
+            if(isset($_POST['ingredientName'])){
+                echo "<td>{$ingredient->strIngredient}</td>";
+            }else{
+                echo "<td>{$ingredient->strIngredient1}</td>";
+            }
             //echo "<td>{$drink->strCategory}</td>";
             //echo "<td>{$drink->strAlcoholic}</td>";
             //$imgSrc ="{$drink->strDrinkThumb}";
