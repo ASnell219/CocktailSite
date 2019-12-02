@@ -8,8 +8,8 @@ include "menu.php";
 <?php 
 if(isset($_POST['ingredientName'])) {
     $ingredientName = $_POST['ingredientName'];
-    // $url = "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?i=".$ingredientName;
-    $url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
+    $url = "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?i=".$ingredientName;
+    // $url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
 }else{
     $ingredientName = "";
     $url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
@@ -27,19 +27,18 @@ if(isset($_POST['ingredientName'])) {
     $ingred;
     echo '<table border=1>';
     foreach($json as $ingredients){
-        foreach($ingredients as $ingredient){
-            if(isset($_POST['ingredientName'])){
-                if(in_array($ingredientName, $ingredients)){
+        // if(isset($_POST['ingredientName'])){
+        //     $matches = array_filter($ingredients, function($var) use ($ingredientName) { return preg_match("/\b$ingredientName\b/i", $var); });      
+        // }
+        // else{
+            
+            foreach($ingredients as $ingredient){
+                echo "<tr>";
+                if(isset($_POST['ingredientName'])){
+                    echo "<td>{$ingredient->strIngredient}</td>";
+                }else{
                     echo "<td>{$ingredient->strIngredient1}</td>";
                 }
-            }
-            else{
-                echo "<tr>";
-                // if(isset($_POST['ingredientName'])){
-                //     echo "<td>{$ingredient->strIngredient}</td>";
-                // }else{
-                    echo "<td>{$ingredient->strIngredient1}</td>";
-                // }
                 //echo "<td>{$drink->strCategory}</td>";
                 //echo "<td>{$drink->strAlcoholic}</td>";
                 //$imgSrc ="{$drink->strDrinkThumb}";
@@ -51,8 +50,13 @@ if(isset($_POST['ingredientName'])) {
                 // }
                 echo "</tr>";
             }
-        }
+        // }
     }
+    // if(isset($_POST['ingredientName'])){
+    //     foreach($matches as $match){
+    //         echo "<tr><td>{$match->strIngredient1}</td></tr>";
+    //     }
+    // }
     echo "</table>";
 ?>
 
