@@ -23,7 +23,7 @@
         $result = $mysqli->query($query);
 
     // }
-    header('Location: apiTest.php');
+    header('Location: index.php');
 
     
 ?>
