@@ -1,0 +1,59 @@
+/* 
+Hex Colors 
+maroon pink: #D0224F
+light blue: #00DDED
+blackish: #171F28
+white: #fff
+*/
+
+/* Grid Styling */
+.container {
+  max-width: 1335px;
+  margin: 0 auto;
+}
+.grid-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.grid-item {
+  text-align: center;
+  flex-basis: 20%;
+  -ms-flex: auto;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 250px;
+  max-height: 300px;
+}
+
+/* Images Styling */
+.singleDrink {
+  flex-direction: column;
+}
+.singleDrink > a > img {
+  max-width: 200px;
+}
+
+
+
+@media(max-width: 1333px) {
+  .grid-item {
+    flex-basis: 33.33%;
+  }
+}
+@media(max-width: 1073px) {
+   .grid-item {
+    flex-basis: 33.33%;
+  }
+}
+@media(max-width: 815px) {
+  .grid-item {
+    flex-basis: 50%;
+  }
+}
+@media(max-width: 555px) {
+  .grid-item {
+    flex-basis: 100%;
+  }
+}

@@ -1,7 +1,7 @@
 <?php
 $menuArr = [  
     "Home" => "../Pages/index.php",
-    "Search for Drinks" => "../Pages/drinkSearch.php"
+    "Drinks" => "../Pages/drinkSearch.php"
 ];
 
 $userSettings = array();
@@ -12,9 +12,14 @@ if(isset($_SESSION['user'])){
 }
 
 $menuArr = array_merge($menuArr, $userSettings);
-
+echo "<ul id='navbar' class='box flex-row'>";
+echo "<div id='logo' class='box flex-row'> Logo </div>";
+echo "<div class='box flex-row'>";
 foreach($menuArr as $key => $value){
-    echo "<a href=$value> $key </a>";
+    echo "<li><a href=$value> $key </a></li>";
+    
 }
+echo "</div>";
+echo "</ul>";
 
 ?>

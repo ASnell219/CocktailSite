@@ -1,3 +1,11 @@
+/* 
+Hex Colors 
+maroon pink: #D0224F
+light blue: #00DDED
+blackish: #171F28
+white: #fff
+*/
+
 html, body, .contentHolder {
   height: 100%;
   margin: 0;
@@ -9,6 +17,8 @@ footer {
   font-family: 'Montserrat', sans-serif;
   font-size: .8em;
 }
+
+/* Flex Styling  */
 .box {
   display: flex;
   flex: 1;
@@ -22,4 +32,32 @@ footer {
 }
 .center-align {
   align-items: center;
+}
+
+/* Navbar Styling */
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #171F28;
+}
+#navbar > div > li {
+  float: left;
+  padding: 15px;
+  cursor: pointer;
+}
+#navbar > div > li > a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  border: 1px solid #171F28;
+  text-decoration: none;
+}
+#navbar > div > li:hover > a {
+  border: 1px solid #fff;
+}
+#logo {
+  flex: 1;
 }

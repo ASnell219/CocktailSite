@@ -1,4 +1,6 @@
-<?php $pageName = "Home"; 
+<?php 
+$pageName = "Home"; 
+$cssFilename = "../styles/index.css";
 include "../Pages/header.php";
 include "../Pages/menu.php";
 ?>
@@ -8,11 +10,12 @@ include "../Pages/menu.php";
     $url="https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php";
     $data =file_get_contents($url);
     $json = json_decode($data);
-    echo "<div id='drinks'>";
+    echo "<div id='drinks' class='container'>";
+    echo "<div class='grid-row'>";
     foreach($json as $drinks){
         foreach($drinks as $drink){
             echo "<a href='drinkInfo.php?d_id={$drink->idDrink}'>";
-            echo "<div id='singleDrink'>";
+            echo "<div class='singleDrink box grid-item'>";
             $imgSrc ="{$drink->strDrinkThumb}";
             echo "<img src=$imgSrc>";
             echo "<div>";
@@ -26,6 +29,7 @@ include "../Pages/menu.php";
             echo "</a>";
         }
     }
+    echo "</div>";
     echo "</div>";
 ?>
 <?php include "footer.php";?>
