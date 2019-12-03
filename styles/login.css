@@ -1,0 +1,88 @@
+/* 
+Hex Colors 
+maroon pink: #D0224F
+light blue: #00DDED
+blackish: #171F28
+white: #fff
+*/
+
+
+/* Button Styling */
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  max-width: fit-content;
+  border: 2px solid #D0224F;
+  padding: 8px 20px;
+  margin: 20px;
+  color: #D0224F;
+}
+.btn:hover { 
+  background-color: #D0224F;
+  color: #fff;
+}
+.btn2 {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  max-width: fit-content;
+  border: 2px solid #fff;
+  padding: 8px 20px;
+  margin: 20px;
+  color: #fff;
+}
+.btn2:hover {
+  background-color: #fff;
+  color: #D0224F;
+}
+#submitBtn {
+  min-width: -webkit-fill-available;
+  margin: 10px 150px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1em;
+}
+#signBtn {
+  min-width: 50%;
+  text-align: center;
+}
+
+
+.imgHolder > img {
+  max-width: 100%;
+}
+.signupInfo {
+  margin: 20px;
+  color: #fff;
+}
+
+
+/* Form Styling */
+#formArea > form {
+  justify-content: center;
+}
+.formInput {
+  padding: 8px;
+  min-width: -webkit-fill-available;
+  margin: 10px 150px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1em;
+}
+.infoArea {
+  flex: 3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1em;
+  background-color: #D0224F;
+  text-align: center;
+}
+#formArea {
+  flex: 7;
+}
+#title {
+  color: #D0224F;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 35px;
+  text-align: center;
+}

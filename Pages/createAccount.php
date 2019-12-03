@@ -1,4 +1,6 @@
-<?php $pageName = "Create Account"; 
+<?php 
+    $pageName = "Create Account"; 
+    $cssFilename = "../styles/createAccount.css";
     include "header.php"; 
     if(!empty($_POST))
     {
@@ -29,7 +31,7 @@
         $mysqli->query($query);
     }
 ?>
-<h1 id='loginHeader'>CreateAccount</h1>
+<!-- <h1 id='loginHeader'>CreateAccount</h1>
 
 <form action='' method="post">
     Username:
@@ -37,6 +39,23 @@
     Password:
     <input id="password" type="password" name="pass">
     <input id="createBtn" type="submit" value="Submit">
-</form>
-<?php include "footer.php"; ?>
-
+</form> -->
+<div class="box flex-row contentHolder">
+    <div id="formArea" class='box flex-col'>
+        <form action='' method="post" class='box flex-col center-align'>
+            <div id="title">Create Account</div>
+            <input class="formInput" type="text" name="user" placeholder="Username">
+            <input class="formInput" type="text" name="pass" placeholder="Password">
+            <input id="submitBtn" class="btn" type="submit" value="Create Account">
+        </form>
+    </div>
+    <div class='infoArea box flex-col center-align'>
+        <div class="imgHolder"><img src="../styles/images/cocktails5.jpg"/></div>
+        <div class="signupInfo"> 
+            <h1>Hey Friend!</h1>
+            <div>Already have an account?</div>
+            <div>Sign in here!</div>
+        </div>
+        <a id="signBtn" class="btn2" href="login.php">Sign In</a>
+    </div>
+</div>

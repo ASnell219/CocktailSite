@@ -1,5 +1,6 @@
 <?php
     $pageName = "Login";
+    $cssFilename = "../styles/login.css";
     include "header.php";
     
 
@@ -44,26 +45,24 @@
     }
 ?>
 
-<div id="contentHolder" class="box flex-col">
-    <div class="box flex-row">
-        <div id="signupArea" class='box flex-col center-align'>
-            <div id="img"><img src="../styles/images/cocktails3.jpg" /></div>
-            <div id="info">
-                <div>Don't have an account?</div>
-                <div>Sign up here!</div>
-            </div>
-            <a id="signupBtn" class="btn" href="createAccount.php">Sign Up</a>
+<div class="box flex-row contentHolder">
+    <div class='infoArea box flex-col center-align'>
+        <div class="imgHolder"><img src="../styles/images/cocktails3.jpg"/></div>
+        <div class="signupInfo">
+            <h1>Hello Friend!</h1>
+            <div>Don't have an account?</div>
+            <div>Sign up here!</div>
         </div>
-        <div id="loginArea" class='box flex-col'>
-            <form action='' method="post" class='box flex-col center-align'>
-                <div id="title">Sign in to "site name"</div>
-                <input class="formInput" type="text" name="user" placeholder="Username">
-                <input class="formInput" type="text" name="pass" placeholder="Password">
-                <input id="loginBtn" class="btn" type="submit" value="Sign In">
-            </form>
-        </div>
+        <a id="signBtn" class="btn2" href="createAccount.php">Sign Up</a>
     </div>
-    <?php include "footer.php"; ?>
+    <div id="formArea" class='box flex-col'>
+        <form action='' method="post" class='box flex-col center-align'>
+            <div id="title">Sign in to the Cocktail Lounge!</div>
+            <input class="formInput" type="text" name="user" placeholder="Username">
+            <input class="formInput" type="text" name="pass" placeholder="Password">
+            <input id="submitBtn" class="btn" type="submit" value="Sign In">
+        </form>
+    </div>
 </div>
 
 

@@ -1,28 +1,11 @@
-html, body, #contentHolder {
-  height: 100%;
-  margin: 0;
-}
-footer {
-  padding: 15px;
-  background-color: #FF0C85;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: .8em;
-}
-.box {
-  display: flex;
-  flex: 1;
-  border: 1px solid black;
-}
-.flex-row {
-  flex-direction: row;
-}
-.flex-col {
-  flex-direction: column;
-}
-.center-align {
-  align-items: center;
-}
+/* 
+Hex Colors 
+maroon pink: #D0224F
+light blue: #00DDED
+blackish: #171F28
+white: #fff
+*/
+
 
 /* Button Styling */
 .btn {
@@ -30,37 +13,52 @@ footer {
   cursor: pointer;
   background-color: transparent;
   max-width: fit-content;
-  border: 2px solid #FF0C85;
+  border: 2px solid #00DDED;
   padding: 8px 20px;
   margin: 20px;
-  color: #FF0C85;
+  color: #00DDED;
 }
-.btn:hover {
-  background-color: #FF0C85;
-  color: #ffffff;
+.btn:hover { 
+  background-color: #00DDED;
+  color: #fff;
 }
-#loginBtn {
+.btn2 {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  max-width: fit-content;
+  border: 2px solid #fff;
+  padding: 8px 20px;
+  margin: 20px;
+  color: #fff;
+}
+.btn2:hover {
+  background-color: #fff;
+  color: #00DDED;
+}
+#submitBtn {
   min-width: -webkit-fill-available;
   margin: 10px 150px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1em;
 }
-#signupBtn {
+#signBtn {
   min-width: 50%;
   text-align: center;
 }
 
 
-#img > img {
+.imgHolder > img {
   max-width: 100%;
 }
-#info {
-  margin: 40px 20px;
+.signupInfo {
+  margin: 20px;
+  color: #fff;
 }
 
 
 /* Form Styling */
-#loginArea > form {
+#formArea > form {
   justify-content: center;
 }
 .formInput {
@@ -70,18 +68,21 @@ footer {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1em;
 }
-#signupArea {
+.infoArea {
   flex: 3;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1em;
+  background-color: #00DDED;
+  text-align: center;
 }
-#loginArea {
+#formArea {
   flex: 7;
 }
 #title {
-  color: #FF0C85;
+  color: #00DDED;
   font-family: 'Montserrat', sans-serif;
   font-size: 3em;
   font-weight: bold;
-  margin: 20px;
+  margin: 35px;
+  text-align: center;
 }

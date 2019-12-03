@@ -1,0 +1,25 @@
+html, body, .contentHolder {
+  height: 100%;
+  margin: 0;
+}
+footer {
+  padding: 15px;
+  background-color: #171F28;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8em;
+}
+.box {
+  display: flex;
+  flex: 1;
+  /* border: 1px solid black; */
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+.center-align {
+  align-items: center;
+}
