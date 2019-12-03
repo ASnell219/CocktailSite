@@ -11,6 +11,7 @@ include "../Pages/menu.php";
     echo "<div id='drinks'>";
     foreach($json as $drinks){
         foreach($drinks as $drink){
+            echo "<a href='drinkInfo.php?d_id={$drink->idDrink}'>";
             echo "<div id='singleDrink'>";
             $imgSrc ="{$drink->strDrinkThumb}";
             echo "<img src=$imgSrc>";
@@ -22,6 +23,7 @@ include "../Pages/menu.php";
                 echo "<td><a href='favorite.php?d_id={$drink->idDrink}'>Favorite</a></td>";
             }
             echo "</div>";
+            echo "</a>";
         }
     }
     echo "</div>";
