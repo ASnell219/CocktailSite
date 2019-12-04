@@ -55,7 +55,7 @@ include "menu.php";
                     }
                 }
                 else {
-                    echo "<div id='error'>You don not have favorites yet</div>";
+                    echo "<div id='error'>You don't have favorites yet</div>";
                 }
                 echo "</div>";
                 echo "</div>";  
