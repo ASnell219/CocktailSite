@@ -23,7 +23,7 @@
         $result = $mysqli->query($query);
 
     }
-    header('Location: index.php');
+    header('Location: drinkSearch.php');
 
     
 ?>

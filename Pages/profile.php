@@ -9,7 +9,7 @@ include "menu.php";
 <div id='profileContainer' class='box flex-row'>
     <div id='userProfile' class='box flex-col'>
         <div id='profilePic' class='box flex-row'><img src="../styles/images/defaultProfile.jpg"/></div>
-        <div id='username' class='box flex-row'> Username </div>
+        <div id='username' class='box flex-row'> <?php echo $_SESSION['user'] ?></div>
     </div>
     <div id='favoritesArea' class='box flex-col'>
         <?php
@@ -24,7 +24,7 @@ include "menu.php";
                     extract($row);
                     $u_id= $User_ID;
                 }
-                $query = "Select * from Favorites where User_ID=".$u_id;
+                $query = "Select * from favorites where User_ID=".$u_id;
                 $result = $mysqli->query($query);
                 $num_results = $result->num_rows;
                 echo "<div id='drinks' class='container'>";
@@ -55,7 +55,7 @@ include "menu.php";
                     }
                 }
                 else {
-                    echo "<div id='error'>You don not have favorites yet</div>";
+                    echo "<div id='error'>You don't have favorites yet</div>";
                 }
                 echo "</div>";
                 echo "</div>";  
