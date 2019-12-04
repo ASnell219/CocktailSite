@@ -1,9 +1,9 @@
-<?php $pageName = "Drink Search"; 
+<?php 
+$pageName = "Drink Search"; 
+$cssFilename = "../styles/drinkSearch.css";
 include "header.php";
 include "menu.php";
 ?>
-
-<h1> Search for Drinks! </h1>
 
 <?php 
 if(isset($_POST['drinkName'])) {
@@ -16,8 +16,10 @@ if(isset($_POST['drinkName'])) {
 ?>
 
 <form method="post">
-<input type="text" name="drinkName" id="drinkName" value="<?php echo $drinkName ?>"><br/>
-<input type="submit" value="Search">
+    <div id="inputArea" class="box flex-row">
+        <input type="text" name="drinkName" id="drinkName" value="<?php echo $drinkName ?>"><br/>
+        <button id="submitBtn" type="submit"><i id='search' class="fas fa-search"></i></button>
+    </div>
 </form>
 
 <?php   
@@ -25,30 +27,45 @@ if(isset($_POST['drinkName'])) {
     $json = json_decode($data);
     if(is_array($json) || is_object($json))
     {
-        echo '<table border=1>';
+        echo "<div id='drinks' class='container'>";
+        echo "<div class='grid-row'>";
         foreach($json as $drinks){
             if(is_array($drinks))
             {
                 foreach($drinks as $drink){
-                    echo "<tr>";
-                    echo "<td><a href='drinkInfo.php?d_id={$drink->idDrink}'>{$drink->strDrink}</a></td>";
+                    echo "<div class='grid-item'>";
+                    echo "<div id='card' href='drinkInfo.php?d_id={$drink->idDrink}'>";
                     $imgSrc ="{$drink->strDrinkThumb}";
-                    echo "<td><img src=$imgSrc></td>";
+                    echo "<img src=$imgSrc>";
+                    echo "<a class='name'>{$drink->strDrink}</a>";
             
                     if (isset($_SESSION['user'])) 
                     {
-                        echo "<td><a href='favorite.php?d_id={$drink->idDrink}'>Favorite</a></td>";
+                        echo "<a class='favorites' href='favorite.php?d_id={$drink->idDrink}'><i class='far fa-heart fa-lg unfilled'></i><i class='fas fa-heart fa-lg filled'></i></a>";
                     }
-                    echo "</tr>";
+                    echo "</div>";
+                    echo "</div>";
                 }
             } 
             else 
             {
-            echo "There are no drinks with that in the name";
+            echo "<div id='error'>There are no drinks with that in the name</div>";
             }
         }
-        echo "</table>";       
+        echo "</div>";
+        echo "</div>";;       
     }
 ?>
 
 <?php "footer.php";?>
+
+<!-- 
+    Unfilled Heart
+    <i class='far fa-heart fa-lg unfilled'></i>
+
+    Filled Heart
+    <i class='fas fa-heart fa-lg filled'></i> 
+
+    Search Icon
+    <i id='search' class="fas fa-search"></i>
+-->

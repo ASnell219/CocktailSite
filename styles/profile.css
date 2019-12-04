@@ -1,0 +1,29 @@
+/* 
+Hex Colors 
+maroon pink: #D0224F
+light blue: #00DDED
+blackish: #171F28
+white: #fff
+*/
+
+#profileContainer {
+  margin: 30px;
+}
+#userProfile {
+  flex: 3;
+  padding: 30px;
+}
+#favoritesArea {
+  flex: 7;
+  padding: 30px;
+}
+#profilePic {
+  justify-content: center;
+}
+#profilePic > img {
+  max-width: 100%;
+}
+#username {
+  justify-content: center;
+  margin-top: 20px;
+}
