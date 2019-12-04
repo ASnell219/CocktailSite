@@ -8,10 +8,10 @@ include "menu.php";
 <?php 
 if(isset($_POST['drinkName'])) {
     $drinkName = $_POST['drinkName'];
-    $url="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=".$drinkName;
+    $url="https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=".$drinkName;
 }else{
     $drinkName = "";
-    $url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
+    $url = "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?f=a";
 }
 ?>
 

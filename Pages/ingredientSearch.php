@@ -8,12 +8,12 @@ include "menu.php";
 <?php 
 if(isset($_POST['ingredientName'])) {
     $ingredientName = $_POST['ingredientName'];
-    $url = "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?i=".$ingredientName;
-    // $url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
-}else{
+        $url = "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?i=".$ingredientName;
+}else {
     $ingredientName = "";
     $url = "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list";
 }
+
 ?>
 
 <form method="post">

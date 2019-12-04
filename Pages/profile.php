@@ -30,8 +30,8 @@ if (isset($_SESSION['user']))
                 $json = json_decode($data);
                 foreach($json as $drinks){
                     foreach($drinks as $drink){
-                        echo "<tr>";
-                        echo "<td>{$drink->strDrink}</td>";
+                        echo "<tr>";  
+                        echo "<td><a href='drinkInfo.php?d_id={$drink->idDrink}'>{$drink->strDrink}</a></td>";
                         $imgSrc ="{$drink->strDrinkThumb}";
                         echo "<td><img src=$imgSrc></td>";
                         
