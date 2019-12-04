@@ -9,7 +9,7 @@ include "menu.php";
 <div id='profileContainer' class='box flex-row'>
     <div id='userProfile' class='box flex-col'>
         <div id='profilePic' class='box flex-row'><img src="../styles/images/defaultProfile.jpg"/></div>
-        <div id='username' class='box flex-row'> Username </div>
+        <div id='username' class='box flex-row'> <?php echo $_SESSION['user'] ?></div>
     </div>
     <div id='favoritesArea' class='box flex-col'>
         <?php
