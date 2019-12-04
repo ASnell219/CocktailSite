@@ -11,10 +11,20 @@ include "menu.php";
         foreach($drinks as $drink){
             echo "<tr>";
             echo "<td>{$drink->strDrink}</td>";
-            echo "<td>{$drink->strCategory}</td>";
-            echo "<td>{$drink->strAlcoholic}</td>";
             $imgSrc ="{$drink->strDrinkThumb}";
             echo "<td><img src=$imgSrc></td>";
+
+
+            for($i = 1; $i < 16; $i++)
+            {
+                $ingredient = "strIngredient".$i;
+                if(!empty($drink->$ingredient))
+                {
+                   echo "<td>{$drink->$ingredient}</td>";
+                }
+            }
+
+            echo "<td>{$drink->strInstructions}</td>";
             
             if (isset($_SESSION['user'])) 
             {
@@ -25,8 +35,6 @@ include "menu.php";
     }
     echo "</table>";
 ?>
-
-
 
 
 <?php include "footer.php"; ?>
