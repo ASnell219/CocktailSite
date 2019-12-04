@@ -17,6 +17,10 @@ footer {
   font-family: 'Montserrat', sans-serif;
   font-size: .8em;
 }
+/* footer,
+.push {
+  height: 50px;
+} */
 
 /* Flex Styling  */
 .box {

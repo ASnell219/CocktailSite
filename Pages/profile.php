@@ -8,7 +8,7 @@ include "menu.php";
 
 <div id='profileContainer' class='box flex-row'>
     <div id='userProfile' class='box flex-col'>
-        <div id='profilePic' class='box flex-row'><img src="../styles/images/cocktails4.jpg"/></div>
+        <div id='profilePic' class='box flex-row'><img src="../styles/images/defaultProfile.jpg"/></div>
         <div id='username' class='box flex-row'> Username </div>
     </div>
     <div id='favoritesArea' class='box flex-col'>
@@ -27,7 +27,8 @@ include "menu.php";
                 $query = "Select * from Favorites where User_ID=".$u_id;
                 $result = $mysqli->query($query);
                 $num_results = $result->num_rows;
-                echo '<table border=1>';
+                echo "<div id='drinks' class='container'>";
+                echo "<div class='grid-row'>";
 
                 if($num_results>0){
                     while( $row = $result->fetch_assoc() ){
@@ -37,33 +38,36 @@ include "menu.php";
                         $json = json_decode($data);
                         foreach($json as $drinks){
                             foreach($drinks as $drink){
-                                echo "<tr>";
-                                echo "<td>{$drink->strDrink}</td>";
+                                echo "<div class='grid-item'>";
+                                echo "<a id='card' href='drinkInfo.php?d_id={$drink->idDrink}'>";
                                 $imgSrc ="{$drink->strDrinkThumb}";
-                                echo "<td><img src=$imgSrc></td>";
+                                echo "<img src=$imgSrc>";
+                                echo "<div class='name'>{$drink->strDrink}</div>";
                                 
                                 if (isset($_SESSION['user'])) 
                                 {
-                                    echo "<td><a href='unfavorite.php?d_id={$drink->idDrink}'>Unfavorite</a></td>";
+                                    echo "<a class='favorites' href='unfavorite.php?d_id={$drink->idDrink}'><i class='far fa-times-circle fa-lg unfilled'></i><i class='fas fa-times-circle fa-lg filled'></i></a>";
                                 }
-                                echo "</tr>";
+                                echo "</a>";
+                                echo "</div>";
                             }
                         }
                     }
-                }else{
                 }
-                echo "</table>";
-
+                else {
+                    echo "<div id='error'>You don not have favorites yet</div>";
+                }
+                echo "</div>";
+                echo "</div>";  
             }
         ?>
     </div>
 </div>
-<?php include "footer.php";?>
 
 <!-- 
     Unfilled X
-    <i class="far fa-times-circle fa-lg unfilled"></i>
+    <i class='far fa-times-circle fa-lg unfilled'></i>
 
     Filled X
-    <i class="fas fa-times-circle fa-lg filled"></i> 
+    <i class='fas fa-times-circle fa-lg filled'></i> 
 -->

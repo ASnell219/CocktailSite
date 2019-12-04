@@ -5,7 +5,7 @@ include "../Pages/header.php";
 include "../Pages/menu.php";
 ?>
 
-<h1> Welcome to the Cocktail Site! </h1>
+<h1 id="title"> Drinks of the Day </h1>
 <?php
     $url="https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php";
     $data =file_get_contents($url);
@@ -14,19 +14,18 @@ include "../Pages/menu.php";
     echo "<div class='grid-row'>";
     foreach($json as $drinks){
         foreach($drinks as $drink){
-            echo "<a href='drinkInfo.php?d_id={$drink->idDrink}'>";
             echo "<div class='singleDrink box grid-item'>";
+            echo "<a id='card' href='drinkInfo.php?d_id={$drink->idDrink}'>";
             $imgSrc ="{$drink->strDrinkThumb}";
             echo "<img src=$imgSrc>";
-            echo "<div>";
-            echo "{$drink->strDrink}";
-            echo "</div>";
+            echo "<div class='name'>{$drink->strDrink}</div>";
+
             if (isset($_SESSION['user'])) 
             {
-                echo "<td><a href='favorite.php?d_id={$drink->idDrink}'>Favorite</a></td>";
+                echo "<a class='favorites' href='favorite.php?d_id={$drink->idDrink}'><i class='far fa-heart fa-lg unfilled'></i><i class='fas fa-heart fa-lg filled'></i></a>";
             }
-            echo "</div>";
             echo "</a>";
+            echo "</div>";
         }
     }
     echo "</div>";

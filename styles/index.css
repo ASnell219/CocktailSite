@@ -14,6 +14,7 @@ white: #fff
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  margin-bottom: 50px;
 }
 .grid-item {
   text-align: center;
@@ -21,8 +22,8 @@ white: #fff
   position: relative;
   padding: 10px;
   box-sizing: border-box;
-  max-width: 250px;
-  max-height: 300px;
+  max-width: 280px;
+  max-height: 330px;
 }
 
 /* Images Styling */
@@ -33,6 +34,48 @@ white: #fff
   max-width: 200px;
 }
 
+
+
+#card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+#card > img {
+  max-width: 100%;
+  border: 2px solid #D0224F;
+  border-bottom: none;
+}
+.name {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px;
+  border: 2px solid #D0224F;
+  background-color: #D0224F;
+}
+.favorites {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  margin: 18px 8px;
+  text-decoration: none;
+  color: #D0224F;
+}
+
+.favorites:hover > .filled {
+  display: block;
+}
+.favorites:hover > .unfilled {
+  display: none;
+}
+.filled {
+  display: none;
+}
+
+
+#title {
+  text-align: center;
+}
 
 
 @media(max-width: 1333px) {

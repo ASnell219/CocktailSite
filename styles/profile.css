@@ -25,5 +25,69 @@ white: #fff
 }
 #username {
   justify-content: center;
-  margin-top: 20px;
+  margin: 15px;
+}
+
+
+.container {
+  max-width: 1335px;
+  height: 100%;
+  background-color: rgba(23, 31, 40, 0.2);
+}
+.grid-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  height: 100%;
+}
+.grid-item {
+  text-align: center;
+  flex-basis: 20%;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  max-height: 330px;
+  max-width: 180px;
+  /* min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+/* Images Styling */
+#card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+#card > img {
+  max-width: 100%;
+  border: 2px solid #D0224F;
+  border-bottom: none;
+}
+.name {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px;
+  border: 2px solid #D0224F;
+  background-color: #D0224F;
+}
+.favorites {
+  position: absolute;
+  top: 8px;
+  /* top: 38px; */
+  right: 16px;
+  margin: 18px 8px;
+  text-decoration: none;
+  color: #D0224F;
+}
+
+.favorites:hover > .filled {
+  display: block;
+}
+.favorites:hover > .unfilled {
+  display: none;
+}
+.filled {
+  display: none;
 }

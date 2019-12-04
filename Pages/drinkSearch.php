@@ -6,12 +6,17 @@ include "menu.php";
 ?>
 
 <?php 
+// if(strlen($_POST['drinkName']) == 1) {
+//     $drinkName = $_POST['drinkName'];
+//     $url="https://www.thecocktaildb.com/api/json/v2/9973533/search.php?f=".$drinkName;
+// }
 if(isset($_POST['drinkName'])) {
     $drinkName = $_POST['drinkName'];
-    $url="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=".$drinkName;
-}else{
+    $url="https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=".$drinkName;
+}
+else {
     $drinkName = "";
-    $url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
+    $url = "https://www.thecocktaildb.com/api/json/v2/9973533/search.php?f=a";
 }
 ?>
 
@@ -34,16 +39,16 @@ if(isset($_POST['drinkName'])) {
             {
                 foreach($drinks as $drink){
                     echo "<div class='grid-item'>";
-                    echo "<div id='card' href='drinkInfo.php?d_id={$drink->idDrink}'>";
+                    echo "<a id='card' href='drinkInfo.php?d_id={$drink->idDrink}'>";
                     $imgSrc ="{$drink->strDrinkThumb}";
                     echo "<img src=$imgSrc>";
-                    echo "<a class='name'>{$drink->strDrink}</a>";
+                    echo "<div class='name'>{$drink->strDrink}</div>";
             
                     if (isset($_SESSION['user'])) 
                     {
                         echo "<a class='favorites' href='favorite.php?d_id={$drink->idDrink}'><i class='far fa-heart fa-lg unfilled'></i><i class='fas fa-heart fa-lg filled'></i></a>";
                     }
-                    echo "</div>";
+                    echo "</a>";
                     echo "</div>";
                 }
             } 
@@ -53,11 +58,11 @@ if(isset($_POST['drinkName'])) {
             }
         }
         echo "</div>";
-        echo "</div>";;       
+        echo "</div>";    
     }
 ?>
 
-<?php "footer.php";?>
+<?php include "footer.php";?>
 
 <!-- 
     Unfilled Heart
