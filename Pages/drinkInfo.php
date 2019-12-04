@@ -1,4 +1,6 @@
-<?php $pageName = "Drink Info"; 
+<?php 
+$pageName = "Drink Info"; 
+$cssFilename = "../styles/drinkInfo.css";
 include "header.php";
 include "menu.php";
 ?>
@@ -6,34 +8,46 @@ include "menu.php";
     $url="https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=".$_GET['d_id'];
     $data =file_get_contents($url);
     $json = json_decode($data);
-    echo '<table border=1>';
+    // echo "<div id='drinks' class='container'>";
+    // echo "<div class='grid-row'>";
+    echo "<div id='container' class='box flex-row'>";
     foreach($json as $drinks){
         foreach($drinks as $drink){
-            echo "<tr>";
-            echo "<td>{$drink->strDrink}</td>";
+            // echo "<div class='grid-item'>";
+            echo "<div id='image' class='box flex-col'>";
             $imgSrc ="{$drink->strDrinkThumb}";
-            echo "<td><img src=$imgSrc></td>";
+            echo "<img src=$imgSrc>";
+            echo "</div>";
 
-
+            echo "<div id='info' class='box flex-col'>";
+            echo "<div class='name' class='box flex-row'>{$drink->strDrink}</div>";
+            echo "<div id='ingredientTitle' class='box flex-row'>Ingredients</div>";
+            echo "<div id='ingredientsList' class='box flex-col'>";
             for($i = 1; $i < 16; $i++)
             {
                 $ingredient = "strIngredient".$i;
                 if(!empty($drink->$ingredient))
                 {
-                   echo "<td>{$drink->$ingredient}</td>";
+                   echo "<div class='box flex-row ingredients'>{$drink->$ingredient}</div>";
                 }
             }
-
-            echo "<td>{$drink->strInstructions}</td>";
+            echo "</div>";
             
+            echo "<div class='box flex-col'>";
+            echo "<div id='instructTitle' class='box flex-row'>Instructions</div>";
+            echo "<div id='instruct' class='box flex-row'>{$drink->strInstructions}</div>";
+            echo "</div>";
+
+            echo "</div>";
             if (isset($_SESSION['user'])) 
             {
-                echo "<td><a href='favorite.php?d_id={$drink->idDrink}'>Favorite</a></td>";
+                echo "<a class='favorites' href='favorite.php?d_id={$drink->idDrink}'><i class='far fa-heart fa-lg unfilled'></i><i class='fas fa-heart fa-lg filled'></i></a>";
             }
-            echo "</tr>";
+            echo "</div>";
         }
     }
-    echo "</table>";
+    echo "</div>";
+    echo "</div>";  
 ?>
 
 

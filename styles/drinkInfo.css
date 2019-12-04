@@ -1,0 +1,79 @@
+/* 
+Hex Colors 
+maroon pink: #D0224F
+light blue: #00DDED
+blackish: #171F28
+white: #fff
+*/
+
+/* Grid Styling */
+/* .container {
+  max-width: 1335px;
+}
+.grid-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.grid-item {
+  text-align: center;
+  flex-basis: 20%;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 280px;
+  max-height: 330px;
+}
+.grid-item > img {
+  max-width: 100%;
+} */
+#image > img {
+  max-width: 100%;
+}
+#image {
+  margin-right: 40px;
+}
+.name {
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 2em; 
+  color: #D0224F;
+}
+.favorites {
+  position: absolute;
+  top: 130px;
+  right: 670px;
+  margin: 18px 8px;
+  text-decoration: none;
+  color: #D0224F;
+}
+
+.favorites:hover > .filled {
+  display: block;
+}
+.favorites:hover > .unfilled {
+  display: none;
+}
+.filled {
+  display: none;
+}
+#container {
+  padding: 50px;
+}
+#instruct, #ingredientsList  {
+  padding: 20px;
+}
+#instructTitle {
+  max-height: fit-content;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#ingredientTitle {
+  font-weight: bold;
+  max-height: fit-content;
+  font-size: 1.2em;
+}
+.ingredients {
+  margin-bottom: 10px;
+}
