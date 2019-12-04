@@ -9,7 +9,6 @@ white: #fff
 /* Grid Styling */
 .container {
   max-width: 1335px;
-  margin: 0 auto;
 }
 .grid-row {
   display: flex;
@@ -19,7 +18,6 @@ white: #fff
 .grid-item {
   text-align: center;
   flex-basis: 20%;
-  -ms-flex: auto;
   position: relative;
   padding: 10px;
   box-sizing: border-box;
